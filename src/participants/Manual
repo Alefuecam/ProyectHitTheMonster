@@ -1,0 +1,19 @@
+Instrucciones:
+Para correr el juego se debe correr la clase "ServidorLogin", despues la clase "Person". La clase Person sirve como
+un launcher, donde se simulan varios clientes, esto para simular un estresamiento.
+
+Lo que hace la clase Person es iniciar hilos de la clase Cliente. Es en esta clase donde se reciben mensajes y se lanza
+el GUI del juego.
+
+La clase Juego simplemente crea un GUI y establece una conexion TCP cuando el cliente da click sobre un mounstro,
+avisando al servidor.
+
+Del lado del servidor, el Servidor usa la clase Jugadores para crear un objeto por cliente y meetrlo en una base de
+datos, ademas lanza mensajes periodicamente. La clase aleatorio simplemente genera un numero aleatorio.
+
+Sobre el login: El login es simple, solo basta que el cliente haga contacto con el servidor y este lo acepta sin
+filtro, es decir, acepta a todos. ClienteLogin tiene un estresador para simular varios clientes,, cada uno establece
+una conexion TCP con el servidor.
+
+ServidorLogin usa la clase Counter para saber cuantos clientes han hecho login, ademas envia via TCP informcion
+necesaria.
